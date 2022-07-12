@@ -1,17 +1,8 @@
 import React from "react";
-import Keyboard from "./src/components/keyboard/Keyboard";
 import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./components/App/App";
 import reportWebVitals from "./reportWebVitals";
-
-export default function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Gameboard />
-      <Keyboard />
-    </div>
-  );
-}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

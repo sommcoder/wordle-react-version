@@ -1,9 +1,24 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import Key from "./Key";
 import KeyRow from "./Key";
 
-function Keyboard() {
-  render(<div>{KeyRow}</div>);
+export default function Keyboard(props) {
+  const rowLetters = [
+    {
+      row: "row_1",
+      letters: ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+    },
+    { row: "row_2", letters: ["a", "s", "d", "f", "g", "h", "j", "k", "l"] },
+    { row: "row_3", letters: ["z", "x", "c", "v", "b", "n", "m"] },
+  ];
+
+  render(
+    <div>
+      {rowLetters.forEach((el) =>
+        el.letters.map((key) => <Key key={rowLetters.row} />)
+      )}
+    </div>
+  );
 }
 
 // import Key from "Key.js";

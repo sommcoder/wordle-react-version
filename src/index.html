@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle Game</title>
+    <link href="index.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav id="navigation-bar">
+      <span id="title">Wordle</span>
+    </nav>
+    <div id="game-container">
+      <div id="game__input-container">
+        <div data-guess-grid class="game__input-row game__input-row-0">
+          <!-- below is all display: none -->
+          <div class="alert-container alert-container-1">
+            <div class="alert-message">Not in word list</div>
+          </div>
+          <div class="alert-container alert-container-2">
+            <div class="alert-message">Not enough letters</div>
+          </div>
+          <div class="alert-container attempt-1">
+            <div class="alert-message">AMAZING!!!</div>
+          </div>
+          <div class="alert-container attempt-2">
+            <div class="alert-message">Magnificent!</div>
+          </div>
+          <div class="alert-container attempt-3">
+            <div class="alert-message">Awesome!</div>
+          </div>
+          <div class="alert-container attempt-4">
+            <div class="alert-message">Well done!</div>
+          </div>
+          <div class="alert-container attempt-5">
+            <div class="alert-message">Good!</div>
+          </div>
+          <div class="alert-container attempt-6">
+            <div class="alert-message">Pfew! Just got it!</div>
+          </div>
+          <div class="alert-container failed">
+            <div class="alert-message">Try again tomorrow :(</div>
+          </div>
+          <!-- above is display: none -->
+
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-0-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-0-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-0-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-0-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-0-block-4"
+          />
+        </div>
+        <div class="game__input-row game__input-row-1">
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-1-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-1-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-1-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-1-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-1-block-4"
+          />
+        </div>
+        <div class="game__input-row game__input-row-2">
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-2-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-2-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-2-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-2-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-2-block-4"
+          />
+        </div>
+        <div class="game__input-row game__input-row-3">
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-3-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-3-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-3-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-3-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-3-block-4"
+          />
+        </div>
+        <div class="game__input-row game__input-row-4">
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-4-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-4-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-4-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-4-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-4-block-4"
+          />
+        </div>
+        <div class="game__input-row game__input-row-5">
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-5-block-0"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-5-block-1"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-5-block-2"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-5-block-3"
+          />
+          <input
+            data-guess
+            readonly
+            maxlength="1"
+            size="1"
+            type="text"
+            class="game__input-block game__input-row-5-block-4"
+          />
+        </div>
+      </div>
+
+      <div id="game__keyboard-container">
+        <div class="keyboard-row">
+          <button data-key="q" value="q" class="keyboard-btn">q</button>
+          <button data-key="w" value="w" class="keyboard-btn">w</button>
+          <button data-key="e" value="e" class="keyboard-btn">e</button>
+          <button data-key="r" value="r" class="keyboard-btn">r</button>
+          <button data-key="t" value="t" class="keyboard-btn">t</button>
+          <button data-key="y" value="y" class="keyboard-btn">y</button>
+          <button data-key="u" value="u" class="keyboard-btn">u</button>
+          <button data-key="i" value="i" class="keyboard-btn">i</button>
+          <button data-key="o" value="o" class="keyboard-btn">o</button>
+          <button data-key="p" value="p" class="keyboard-btn">p</button>
+        </div>
+        <div class="keyboard-row">
+          <div class="spacer"></div>
+          <button data-key="a" value="a" class="keyboard-btn">a</button>
+          <button data-key="s" value="s" class="keyboard-btn">s</button>
+          <button data-key="d" value="d" class="keyboard-btn">d</button>
+          <button data-key="f" value="f" class="keyboard-btn">f</button>
+          <button data-key="g" value="g" class="keyboard-btn">g</button>
+          <button data-key="h" value="h" class="keyboard-btn">h</button>
+          <button data-key="j" value="j" class="keyboard-btn">J</button>
+          <button data-key="k" value="k" class="keyboard-btn">K</button>
+          <button data-key="l" value="l" class="keyboard-btn">L</button>
+          <div class="spacer"></div>
+        </div>
+        <div class="keyboard-row">
+          <button
+            class="keyboard-btn keyboard-btn--special"
+            data-enter
+            value="enter"
+          >
+            ENTER
+          </button>
+          <button data-key="z" value="z" class="keyboard-btn">Z</button>
+          <button data-key="x" value="x" class="keyboard-btn">X</button>
+          <button data-key="c" value="c" class="keyboard-btn">C</button>
+          <button data-key="v" value="v" class="keyboard-btn">V</button>
+          <button data-key="b" value="b" class="keyboard-btn">B</button>
+          <button data-key="n" value="n" class="keyboard-btn">n</button>
+          <button data-key="m" value="m" class="keyboard-btn">m</button>
+          <button
+            class="keyboard-btn keyboard-btn--special backspace-btn"
+            data-delete
+            value="<="
+          >
+            <=
+          </button>
+        </div>
+      </div>
+    </div>
+    <script defer src="index.jsx"></script>
+  </body>
+</html>
