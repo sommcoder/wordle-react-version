@@ -10,6 +10,17 @@ function populateKeyRow(arr) {
   return KeyRow1;
 }
 
+
+function 
+  const rowLetters = [
+    {
+      row: "row_1",
+      letters: ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+    },
+    { row: "row_2", letters: ["a", "s", "d", "f", "g", "h", "j", "k", "l"] },
+    { row: "row_3", letters: ["z", "x", "c", "v", "b", "n", "m"] },
+  ];
+
 function KeyRow() {
   return (
     <div>
